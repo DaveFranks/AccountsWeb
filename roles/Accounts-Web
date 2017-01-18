@@ -1,0 +1,57 @@
+# Ensure Account App
+# These steps will Create Directories if needed and place the asset Accounts.zip in a known location
+{
+    Ensure-Directory $WebsitesRoot
+    (
+        Exists: true
+    );
+
+    Ensure-Asset
+    (
+        Name: Accounts.zip,
+        Raft: GitRaft,
+        Type: File,
+        Exists: true,
+        Directory: $PackagesRoot
+    );
+
+    Extract-ZipFile $PathCombine($PackagesRoot,Accounts.zip)
+    (
+        Directory: $WebsitesRoot,
+        ClearTarget: false,
+        Overwrite: false
+    );
+}
+
+# IIS Configuration Settings
+# These steps will configure IIS to run locally for the web application Accounts
+{
+    Ensure-HostsEntry accounts.localhost
+    (
+        IP: 127.0.0.1,
+        Exists: true
+    );
+
+    Ensure-AppSetting
+    (
+        File: $PathCombine($WebsitesRoot,Web.config),
+        Key: Accounts.Valus,
+        Value: $EnvironmentName
+    );
+
+    Ensure-AppPool AccountsAppPool
+    (
+        Runtime: v4.0,
+        Pipeline: Integrated,
+        Exists: true
+    );
+
+    Ensure-Site Accounts
+    (
+        AppPool: AccountsAppPool,
+        Path: $WebsitesRoot,
+        Protocol: http,
+        Binding: *:1000:,
+        Exists: true
+    );
+}
