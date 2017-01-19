@@ -54,13 +54,4 @@
         Binding: *:1000:,
         Exists: true
     );
-
-    Ensure-Site Accounts
-    (
-        AppPool: AccountsAppPool,
-        Path: $WebsitesRoot,
-        Protocol: https,
-        Binding: *:443:,
-        Exists: true
-    );
 }
