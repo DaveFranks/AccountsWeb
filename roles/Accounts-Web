@@ -51,7 +51,7 @@
         AppPool: AccountsAppPool,
         Path: $WebsitesRoot,
         Protocol: http,
-        Binding: *:1000:,
+        Binding: "*:1000:,*:443:",
         Exists: true
     );
 }
