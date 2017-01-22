@@ -1,4 +1,4 @@
-function Generate-MachineKey {
+#function Generate-MachineKey {
 <#
 .Synopsis
    Generate a <machineKey> element that can be copied + pasted into a Web.config file.
