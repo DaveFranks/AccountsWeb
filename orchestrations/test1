@@ -1,4 +1,6 @@
 # Placeholder test 1
 {
     PSCall Placeholder1;
+
+    Log-Information $temp1;
 }
