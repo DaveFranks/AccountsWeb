@@ -1,7 +1,8 @@
+##AH:UseTextMode
 # Placeholder test 1
 {
     PSCall Placeholder1;
 
     # Script output
-    Log-Debug $machineKey;
+    Log-Information $machineKey;
 }
