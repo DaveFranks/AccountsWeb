@@ -1,8 +1,10 @@
+##AH:UseTextMode
 # Placeholder test 1
 {
     PSCall Placeholder1
     (
         decryptionAlgorithm: AES,
-        validationAlgorithm: SHA1
+        validationAlgorithm: SHA1,
+        OutpuArg => $machineKey
     );
 }
