@@ -1,3 +1,4 @@
+function Generate-MachineKey {
 <#
 .Synopsis
    Generate a <machineKey> element that can be copied + pasted into a Web.config file.
@@ -25,7 +26,6 @@
 .PARAMETER validationAlgorithm
       The validation Algorithm can be one of the following: ("MD5", "SHA1", "HMACSHA256", "HMACSHA384", "HMACSHA512")
 #>
-function Generate-MachineKey {
   [CmdletBinding()]
   param (
     [ValidateSet("AES", "DES", "3DES")]
