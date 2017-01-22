@@ -5,4 +5,7 @@
         decryptionAlgorithm: AES,
         validationAlgorithm: AES
     );
+
+    # result from script
+    Log-Debug $temp;
 }
