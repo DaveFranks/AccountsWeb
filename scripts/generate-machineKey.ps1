@@ -20,10 +20,10 @@ function Generate-MachineKey {
       PS> Generate-MachineKey -validation sha1
       <machineKey decryption="AES" decryptionKey="..." validation="SHA1" validationKey="..." />
 $params = @{$decryptionAlgorithm="Ahmad";$validationAlgorithm="AH"} & “.\generate-machineKey .ps1” @params
-.PARAMETER decryptionAlgorithm
+.PARAMETER $decryptionAlgorithm
       The decryption Algorithm can be one of the following: ("AES", "DES", "3DES")
 
-.PARAMETER validationAlgorithm
+.PARAMETER $validationAlgorithm
       The validation Algorithm can be one of the following: ("MD5", "SHA1", "HMACSHA256", "HMACSHA384", "HMACSHA512")
 #>
   [CmdletBinding()]
