@@ -1,8 +1,8 @@
-##AH:UseTextMode
 # Placeholder test 1
 {
-    PSCall Placeholder1(myConfig => $machineKey);
-
-    # Script output
-    Log-Information $machineKey;
+    PSCall Placeholder1
+    (
+        decryptionAlgorithm: SHA1,
+        validationAlgorithm: AES
+    );
 }
