@@ -1,3 +1,8 @@
 # Placeholder test 1
 {
+    PSCall Placeholder1
+    (
+        decryptionAlgorithm: AES,
+        validationAlgorithm: AES
+    );
 }
